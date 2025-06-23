@@ -16,5 +16,12 @@
       to bottom,
       #e7e7e7, 
       #1a1a1a);
-      
+  --bg-color: #fff; 
+  --card-title-size: 1.125rem;
+  --card-text-size: 1.125rem;
+  --card-weight-bold: 700;
+  --card-weight-normal: 400;
+  --content-width: clamp(23.438rem, 30.141vw + 16.373rem, 43.5rem);
+  --conture-color: #000;      
+  --card-image-height: clamp(23.438rem, 30.141vw + 16.373rem, 43.5rem)
 }
