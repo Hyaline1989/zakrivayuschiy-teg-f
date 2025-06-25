@@ -28,6 +28,9 @@
   --backdrop-color: #000;
   --contour-color: #000;
   --decor-color: #000;
-  
-
+  --contour-color: #000;
+  --animation-fill-color: #FF0000;
+  --main-body-color: #FF0000;
+  --core-color: #fff;
+  --sparks-color: #FF0000;  
 }
