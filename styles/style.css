@@ -13,15 +13,16 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-family: var(--main-font);
-  font-variation-settings: "wght" normal;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: "wght" var(--card-weight-normal);
   background-image: var(--background-image);
+  background-attachment: fixed;
 }
 
-@supports (text-stroke: 0.5px var(--bg-color)) {
+@supports (-webkit-text-stroke: 0.5px var(--bg-color)) {
   .label {
     text-shadow: none;
-    text-stroke: 0.5px var(--bg-color);
+    -webkit-text-stroke: 0.5px var(--bg-color);
   }
 }
 .header__title {
@@ -33,7 +34,7 @@
   text-wrap: nowrap;
 }
 
-.content-width {
+.header-cards-style {
   width: var(--content-width);
   margin: auto;
 }
@@ -68,6 +69,7 @@
 
 .card {
   position: relative;
+  display: block;
   border: 2px solid var(--border-color);
   background-color: var(--bg-color);
 }
@@ -94,11 +96,13 @@
 
 .picture {
   position: relative;
-  display: block;
   height: var(--card-image-height);
+  border-bottom: 2px solid var(--border-color);
+  margin: 0;
 }
 
 .card__picture {
+  display: block;
   width: 100%;
   /* max-height: var(--card-image-height); */
   max-height: 43.5rem;
@@ -150,7 +154,11 @@
   transform: translate(0);
 }
 
-button:focus {
+.button:focus {
+  outline: none; 
+}
+
+button:focus-visible {
   outline: none; 
   box-shadow: 2px 2px 0 var(--decor-color); 
   transition: box-shadow 0.3s ease; 
@@ -163,6 +171,7 @@ button:focus {
   background-color: var(--bg-color);
   transition: 0.3s ease;
   cursor: pointer;
+  padding: 0;
 }
 
 .card__icon-button:focus {
@@ -171,8 +180,7 @@ button:focus {
 }
 
 .card__icon-button:focus-visible {
-  outline: none;
-  box-shadow: none;
+  outline: 2px solid var(--decor-color);
 }
 
 .contour {
@@ -198,6 +206,7 @@ button:focus {
 /* Кнопка лайк */
 .card__like-button {
   padding: 12.5px 37px;
+  min-inline-size: 130px;
 }
 
 .button__text {
@@ -207,11 +216,14 @@ button:focus {
   mix-blend-mode: difference;
   color: var(--bg-color);
   text-wrap: nowrap;
+  /* padding-bottom: 18.5px;
+  padding-top: 18.5px; */
 }
 
+
 .save__button {
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
   gap: 10px;
   margin-bottom: 103px;
   margin-top: 50px;
@@ -233,12 +245,12 @@ button:focus {
   inset: 0;
   border: 2px solid var(--border-color);
   max-inline-size: 353px;
+  column-gap: 20px;
+  padding: 30px;
 }
 
 .dialog[open] {
   display: grid;
-  column-gap: 20px;
-  padding: 30px;
 }
 
 .dialog[open]::backdrop {
