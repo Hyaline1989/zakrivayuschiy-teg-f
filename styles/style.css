@@ -169,7 +169,8 @@ button:focus-visible {
   display: flex;
   border: none;
   background-color: var(--bg-color);
-  transition: 0.3s ease;
+  outline: 2px solid transparent;
+  transition: outline 0.3s ease;
   cursor: pointer;
   padding: 0;
 }
@@ -206,7 +207,7 @@ button:focus-visible {
 /* Кнопка лайк */
 .card__like-button {
   padding: 12.5px 37px;
-  min-inline-size: 130px;
+  inline-size: 130px;
 }
 
 .button__text {
